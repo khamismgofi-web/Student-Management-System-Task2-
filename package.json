@@ -2,9 +2,10 @@
   "name": "student-management-system-task2-",
   "version": "1.0.0",
   "description": "A web app for keeping student records. You can add a student, view their details, edit them, and delete them. Built for Task 2 of the Auspify Full Stack Development Internship.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node --watch server.js"
   },
   "repository": {
     "type": "git",
@@ -13,9 +14,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/khamismgofi-web/Student-Management-System-Task2-/issues"
   },
-  "homepage": "https://github.com/khamismgofi-web/Student-Management-System-Task2-#readme"
+  "homepage": "https://github.com/khamismgofi-web/Student-Management-System-Task2-#readme",
+  "engines": {
+    "node": ">=22"
+  }
 }
