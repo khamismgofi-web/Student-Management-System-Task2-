@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS student_management
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
+ 
+USE student_management;
+ 
+CREATE TABLE IF NOT EXISTS students (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(100) NOT NULL,
+  last_name VARCHAR(100) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  course VARCHAR(150) NOT NULL,
+  year_of_study TINYINT UNSIGNED NOT NULL,
+  phone VARCHAR(20) NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  UNIQUE KEY uq_students_email (email)
+);
+ALTER USER 'student_app'@'localhost' IDENTIFIED BY 'old22man#08';
+exit
