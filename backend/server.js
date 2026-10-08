@@ -1,14 +1,23 @@
 import 'dotenv/config';
 import express from 'express';
+import cors from 'cors';
 import pool from './config/db.js';
-
+import studentRoutes from './routes/studentRoutes.js';
+import { notFound, errorHandler } from './middleware/errorHandler.js';
+ 
 const app = express();
 const PORT = process.env.PORT || 5000;
-
+ 
+app.use(cors({ origin: process.env.CORS_ORIGIN }));
+app.use(express.json());
+ 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
-
+ 
+app.use('/api/students', studentRoutes);
+app.use(notFound);
+app.use(errorHandler);
 async function start() {
   try {
     await pool.query('SELECT 1');
@@ -25,5 +34,5 @@ async function start() {
     process.exit(1);
   }
 }
-
+ 
 start();

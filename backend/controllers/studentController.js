@@ -1,6 +1,6 @@
 import pool from '../config/db.js';
-import { HttpError } from '../utils/httpError.js';
-import { validateStudent } from '../validators/studentValidator.js';
+import { HttpError } from '../utils/HttpErrors.js';
+import { validateStudent } from '../validators/studentValidators.js';
  
 function parseId(rawId) {
   const id = Number(rawId);
