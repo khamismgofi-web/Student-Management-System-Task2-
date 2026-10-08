@@ -1,5 +1,5 @@
 import pool from '../config/db.js';
-import { HttpError } from '../utils/httpError.js';
+import { HttpError } from '../utils/HttpErrors.js';
 import { validateStudent } from '../validators/studentValidator.js';
  
 function parseId(rawId) {
