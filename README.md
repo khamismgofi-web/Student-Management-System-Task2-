@@ -24,13 +24,20 @@ Live demo: [not deployed yet]
 student-management-system/
   backend/
     config/
-      db.js
+    db.js
     controllers/
-      studentController.js
+    |  studentController.js
+    middleware/
+    |  errorHandler.js
     routes/
-      studentRoutes.js
+    |  studentRoutes.js
+    utils/
+    |  HttpErrors.js
+    validator/
+    |  studentValidators.js
     schema.sql
     server.js
+    package-lock.json
     package.json
     .env.example
   frontend/
@@ -82,7 +89,7 @@ Set these in `backend/.env`:
 | `DB_HOST` | MySQL host, usually `localhost` |
 | `DB_USER` | MySQL user |
 | `DB_PASSWORD` | MySQL password |
-| `DB_NAME` | Database name, e.g. `student_management` |
+| `DB_NAME` | Database name,:`student_management` |
 
 Set this in `frontend/.env`:
 
