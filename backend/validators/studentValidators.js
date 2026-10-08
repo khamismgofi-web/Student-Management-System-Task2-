@@ -33,7 +33,7 @@ export function validateStudent(body) {
   }
  
   if (values.phone && !PHONE_PATTERN.test(values.phone)) {
-    errors.push('phone must be 7 to 20 characters: digits, spaces, + ( ) -');
+    errors.push('phone must be 7 to 10 characters: digits, spaces, + ( ) -');
   }
  
   return { errors, values };
